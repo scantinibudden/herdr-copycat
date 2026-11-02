@@ -1,0 +1,31 @@
+name: Bug report
+description: Something about saving or opening a space doesn't work
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: dry-run
+    attributes:
+      label: Dry-run output
+      description: If a space opens wrong, run `node bin/copycat.js open "<name>" --dry-run` from the plugin folder and paste the output.
+      render: text
+  - type: input
+    id: herdr
+    attributes:
+      label: herdr version
+      placeholder: herdr --version
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and Node.js version
+      placeholder: Arch Linux, Node 24
+    validations:
+      required: true

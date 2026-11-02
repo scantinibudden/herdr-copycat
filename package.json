@@ -1,0 +1,38 @@
+{
+  "name": "herdr-copycat",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A herdr plugin: save any workspace as a named space and open copies of it whenever you like.",
+  "license": "MIT",
+  "author": "Sebastian Cantini Budden",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scantinibudden/herdr-copycat.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "copycat": "bin/copycat.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "herdr",
+    "herdr-plugin",
+    "workspace",
+    "layout",
+    "templates",
+    "terminal"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-n": "^18.5.0",
+    "eslint-plugin-unicorn": "^79.0.0",
+    "globals": "^17.14.0"
+  }
+}

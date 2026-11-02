@@ -1,0 +1,49 @@
+id = "scantinibudden.herdr-copycat"
+name = "herdr-copycat"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Save any herdr workspace as a named space (tabs, splits, folders, agents and programs) and open copies of it whenever you like."
+platforms = ["linux", "macos"]
+
+# --- Actions -----------------------------------------------------------------
+# Actions run headless on the herdr server, so each one opens an overlay pane
+# (below) where the name prompt or fzf picker runs.
+
+[[actions]]
+id = "save"
+title = "Copycat: save this workspace as…"
+contexts = ["workspace"]
+command = ["bash", "scripts/launch.sh", "save"]
+
+[[actions]]
+id = "open"
+title = "Copycat: open saved space…"
+contexts = ["workspace"]
+command = ["bash", "scripts/launch.sh", "open"]
+
+[[actions]]
+id = "delete"
+title = "Copycat: delete saved space…"
+contexts = ["workspace"]
+command = ["bash", "scripts/launch.sh", "delete"]
+
+# --- Overlay panes -------------------------------------------------------------
+# These get a real TTY, unlike actions, so prompting works here.
+
+[[panes]]
+id = "save-ui"
+title = "Save space"
+placement = "overlay"
+command = ["bash", "-c", "exec \"$HERDR_PLUGIN_ROOT/scripts/ui.sh\" save"]
+
+[[panes]]
+id = "open-ui"
+title = "Open space"
+placement = "overlay"
+command = ["bash", "-c", "exec \"$HERDR_PLUGIN_ROOT/scripts/ui.sh\" open"]
+
+[[panes]]
+id = "delete-ui"
+title = "Delete space"
+placement = "overlay"
+command = ["bash", "-c", "exec \"$HERDR_PLUGIN_ROOT/scripts/ui.sh\" delete"]

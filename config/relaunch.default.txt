@@ -1,0 +1,47 @@
+# Programs herdr-copycat starts again when it opens a saved space.
+#
+# One program name per line, matched against the program's file name, so "nvim"
+# also covers "/usr/bin/nvim". Everything after # is a comment. A line with just *
+# relaunches every program, whatever it is.
+#
+# Coding agents (claude, codex, opencode, ...) don't belong here: herdr recognises
+# them, and copycat always starts them again (see "agents" in settings.json).
+
+# editors and viewers
+nvim
+vim
+vi
+hx
+nano
+micro
+emacs
+less
+bat
+
+# logs and monitors
+tail
+journalctl
+btop
+htop
+top
+watch
+lazygit
+lazydocker
+k9s
+
+# dev servers and task runners
+npm
+pnpm
+yarn
+bun
+deno
+cargo
+make
+just
+
+# shells into other places
+ssh
+mosh
+psql
+sqlite3
+redis-cli
